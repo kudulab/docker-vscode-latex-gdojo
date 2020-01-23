@@ -27,7 +27,7 @@ RUN apt-get update &&\
 # Install prerequisites for Latex
 RUN apt-get update &&\
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-  texlive
+  texlive latexmk
 
 # Install vscode extensions
 RUN sudo -E -H -u dojo /bin/bash -c "code --install-extension James-Yu.latex-workshop"
