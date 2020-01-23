@@ -1,0 +1,65 @@
+\section{Application Presentation}
+
+\subsection{The code origin}
+\paragraph{}
+The code used in this report was based on...
+
+\subsection{A subsection with some Python}
+\paragraph{}
+The data was converted to json format by running:
+\begin{lstlisting}
+python text2json.py
+\end{lstlisting}\
+
+\paragraph{}
+The main function is depicted below:
+
+\begin{lstlisting}
+def main():
+    a = 42
+    b = 882
+    print(str(a+b))
+\end{lstlisting}\
+
+The result data files were put into $data/json$ directory. 
+
+\section{A section with a list}
+\paragraph{}
+The results of this function were saved into three files under the $results/data$ directory:
+\begin{itemize}
+    \item file named after the parameters set, e.g. \begin{verbatim}pop_100-gen_100-cog_1.0-soc_3.0-speedmin_-3.0-speedmax_3.0.csv\end{verbatim}
+    \item file that contained the mean values
+    \item file that contained the mode values
+\end{itemize}
+
+\paragraph{}
+A nice Python library to generate plots is: \href{https://matplotlib.org/index.html}{matplotlib}.
+
+
+\section{A section with a figure}
+\begin{figure}[H]
+\includegraphics[width=180mm]{sections/app/{C101-pop_100-gen_400-cog_2.0-soc_2.0-speedmin_-3.0-speedmax_3.0}.png}
+\end{figure}
+
+
+\section{A section with a table}
+
+\paragraph{}
+\begin{tabularx}{0.8\textwidth} {
+  | >{\centering\arraybackslash}X
+  | >{\centering\arraybackslash}X
+  | >{\centering\arraybackslash}X
+  | >{\centering\arraybackslash}X
+  | >{\centering\arraybackslash}X | }
+ \hline
+  & The 1st column & The 2nd column & The 3rd one & The last one \\
+ \hline
+ Row1  & 123 & 456 & 789 & 111 \\
+ \hline
+ Row2  & aaa & 456 & 789 & 111 \\
+ \hline
+ Row3  & 123 & 456 & 789 & 111 \\
+ \hline
+ Row4  & 123 & 456 & 789 & 111 \\
+ \hline
+\end{tabularx}

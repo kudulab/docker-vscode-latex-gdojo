@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage[a4paper,hmargin=1.5cm,vmargin=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{tabularx}
+\graphicspath{{figures/}}
+
+\title{\includegraphics[width=10mm]{Animals-Duck-icon.png}\vspace{5cm}\\
+{\small The duck image comes from \href{http://www.iconarchive.com/show/windows-8-icons-by-icons8/Animals-Duck-icon.html}{www.iconarchive.com} } \\
+\bf\textit{ The great title} \\
+\vspace{4cm}}
+\author{\begin{tabular}{cp{2cm}p{8cm}}
+Anna Green  &&	anna@not-existent-domain.com\\
+John Smith  &&	john@not-existent-domain.com\\
+\end{tabular}\vspace{5cm}
+}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+~\vspace{8cm}
+\begin{abstract}
+    \input{sections/abstract.tex}
+\end{abstract}
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+\section{Introduction} \label{intro}
+\input{sections/introduction.tex}
+\input{sections/app/app.tex}
+
+\newpage
+\addcontentsline{toc}{section}
+         {\protect\numberline{References\hspace{-96pt}}}
+\end{document}
