@@ -1,0 +1,9 @@
+**/imagerc*
+ops/*
+Dojofile.to_be_tested
+Dojofile.example
+*.pdf
+*.out
+*.log
+*.toc
+*.aux
