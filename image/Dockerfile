@@ -24,10 +24,13 @@ RUN apt-get update &&\
   wget -O code.deb https://vscode-update.azurewebsites.net/${VSCODE_VERSION}/linux-deb-x64/stable &&\
   dpkg -i code.deb && rm code.deb
 
-# Install prerequisites for Latex
+# Install prerequisites for Latex and
+# also install xzdec in order to be able to install Latex packages
+# https://tex.stackexchange.com/a/262011
 RUN apt-get update &&\
   DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-  texlive latexmk
+  texlive latexmk xzdec
+RUN sudo -E -H -u dojo /bin/bash -c "tlmgr init-usertree"
 
 # Install vscode extensions
 RUN sudo -E -H -u dojo /bin/bash -c "code --install-extension James-Yu.latex-workshop"
@@ -36,6 +39,9 @@ RUN sudo -E -H -u dojo /bin/bash -c "code --install-extension streetsidesoftware
 # Install vscode settings
 COPY vscode_settings.json /home/dojo/.config/Code/User/settings.json
 RUN chown dojo:dojo /home/dojo/.config/Code/User/settings.json
+
+# Install additional Latex package from https://github.com/jbezos/enumitem
+RUN sudo -E -H -u dojo /bin/bash -c "tlmgr install enumitem wrapfig"
 
 # For Bash
 COPY profile /home/dojo/.profile

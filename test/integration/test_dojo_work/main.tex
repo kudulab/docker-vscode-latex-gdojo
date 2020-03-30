@@ -9,6 +9,11 @@
 \usepackage{listings}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\usepackage{wrapfig}
+
 \graphicspath{{figures/}}
 
 \title{\includegraphics[width=10mm]{Animals-Duck-icon.png}\vspace{5cm}\\
@@ -40,7 +45,8 @@ John Smith  &&	john@not-existent-domain.com\\
 \section{Introduction} \label{intro}
 \input{sections/introduction.tex}
 \input{sections/app/app.tex}
-
+\newpage
+\input{sections/wrapped-figure.tex}
 \newpage
 \addcontentsline{toc}{section}
          {\protect\numberline{References\hspace{-96pt}}}
