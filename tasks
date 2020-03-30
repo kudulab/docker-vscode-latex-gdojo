@@ -82,7 +82,7 @@ case "${command}" in
       ;;
   release)
       ./tasks verify
-      releaser::conditional_release
+      releaser::git_tag_from_changelog
       ;;
   publish)
       docker_login
