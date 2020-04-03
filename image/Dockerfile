@@ -40,8 +40,8 @@ RUN sudo -E -H -u dojo /bin/bash -c "code --install-extension streetsidesoftware
 COPY vscode_settings.json /home/dojo/.config/Code/User/settings.json
 RUN chown dojo:dojo /home/dojo/.config/Code/User/settings.json
 
-# Install additional Latex package from https://github.com/jbezos/enumitem
-RUN sudo -E -H -u dojo /bin/bash -c "tlmgr install enumitem wrapfig"
+# Install additional Latex packages
+RUN sudo -E -H -u dojo /bin/bash -c "tlmgr install enumitem wrapfig etoolbox beamer pgf fontaxes carlito"
 
 # For Bash
 COPY profile /home/dojo/.profile

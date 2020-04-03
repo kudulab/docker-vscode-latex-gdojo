@@ -35,5 +35,10 @@ load '/opt/bats-assert/load.bash'
   echo "output: $output"
   assert_line --partial "enumitem"
   assert_line --partial "wrapfig"
+  assert_line --partial "etoolbox"
+  assert_line --partial "beamer"
+  assert_line --partial "pgf"
+  assert_line --partial "fontaxes"
+  assert_line --partial "carlito"
   assert_equal "$status" 0
 }
