@@ -33,7 +33,23 @@ In order to compile your `*.tex` files to pdf, create a `tasks.json` file
 By default current directory in docker container is `/dojo/work`.
 
 
-## Troubleshooting
+## Operations
+
+### Build the image locally
+
+```
+./tasks build_local
+```
+
+### Test the image
+
+```
+./tasks itest
+```
+
+The integration tests will create a pdf file: `test/integration/test_dojo_work/main.pdf`.
+
+### Troubleshooting
 When you have problems building the docker image and the error says:
 ```
 System limit for number of file watchers reached
