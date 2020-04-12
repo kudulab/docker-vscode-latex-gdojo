@@ -83,6 +83,11 @@ System limit for number of file watchers reached
 ```
 See: https://stackoverflow.com/a/55543310/4457564
 
+## Acknowledgements
+
+Special thanks to:
+   * [Michał Kącki](https://github.com/Nefendi) for suggesting a solution using Visual Studio Code
+   * [Ramzi Hadrich](https://github.com/hadrrb) for the initial LaTeX template
 
 ## License
 
