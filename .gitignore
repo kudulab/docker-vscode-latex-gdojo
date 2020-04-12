@@ -11,3 +11,8 @@ Dojofile.example
 *.fls
 *.gz
 core
+*.bbl
+*.bcf
+*.blg
+*.xml
+*blx.bib

@@ -14,6 +14,8 @@
 \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
 \setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
 \usepackage{wrapfig}
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{bibliography.bib}
 
 \graphicspath{{figures/}}
 
@@ -49,6 +51,15 @@ John Smith  &&	john@not-existent-domain.com\\
 \newpage
 \input{sections/wrapped-figure.tex}
 \newpage
+\section{Section to use biblatex}
+This text comes from: \url{https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber}
+
+I doubt that there is any useful information here~\cite{wikibook}.
+
+All we know is limited, apart from knowing the answer we all know. Or do we? Wombat and Koala have discovered some interesting things~\cite{wombat2016}.
+
+Some people are too nosy. What can happen to them is described by Laura Lion~\cite[9]{lion2010}.
 \addcontentsline{toc}{section}
          {\protect\numberline{References\hspace{-96pt}}}
+\printbibliography
 \end{document}

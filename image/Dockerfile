@@ -41,7 +41,7 @@ COPY vscode_settings.json /home/dojo/.config/Code/User/settings.json
 RUN chown dojo:dojo /home/dojo/.config/Code/User/settings.json
 
 # Install additional Latex packages
-RUN sudo -E -H -u dojo /bin/bash -c "tlmgr install enumitem wrapfig etoolbox beamer pgf fontaxes carlito"
+RUN sudo -E -H -u dojo /bin/bash -c "tlmgr install enumitem wrapfig etoolbox beamer pgf fontaxes carlito biblatex logreq"
 
 # For Bash
 COPY profile /home/dojo/.profile

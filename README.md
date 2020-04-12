@@ -7,31 +7,58 @@ The image contains:
  * Visual Studio Code
  * Visual Studio Code extensions: James-Yu.latex-workshop,
  streetsidesoftware.code-spell-checker
+ * LaTeX
 
 Based on [this tutorial](https://pmateusz.github.io/latex/2018/01/30/vs-code-latex-editor.html).
 
 ## Usage
 1. Install [Dojo](https://github.com/kudulab/dojo)
-2. Provide an Dojofile:
+2. Provide a Dojofile:
 
 ```
 DOJO_DOCKER_IMAGE="kudulab/vscode-latex-gdojo:0.1.0"
 ```
 
-3. Run, example commands:
+3. Run `dojo` to make Dojo run a Docker container.
+4. Inside the container you can run e.g.:
 
 ```bash
-dojo
+# start Visual Studio Code IDE
 code &
+# compile LaTeX
+pdflatex -interaction=nonstopmode -file-line-error main.tex
+bibtex main
+pdflatex -interaction=nonstopmode -file-line-error main.tex
 ```
 
-In order to compile your `*.tex` files to pdf, create a `tasks.json` file
+By default current directory in Docker container is `/dojo/work`.
+
+### Compile in Visual Studio Code
+In order to compile your `*.tex` files to pdf, create a `.vscode/tasks.json` file
  like [this tutorial](https://pmateusz.github.io/latex/2018/01/30/vs-code-latex-editor.html)
- instructs or see the example in this repository in tests/integration/test_dojo_work.
+ instructs or see the example in this repository in `tests/integration/test_dojo_work`.
  Then, press Ctrl+Shift+B.
 
-By default current directory in docker container is `/dojo/work`.
+### Compile from cli
 
+Assuming that your LaTeX file is called `main.tex`:
+```
+pdflatex -interaction=nonstopmode -file-line-error main.tex
+```
+
+### Using a bibliography/references
+This Docker image uses bibtex+bibtex. A separate file to keep the bibliography is needed. By convention its extension is:  `.bib`. Each time you change the bibliography file, you have to run `bibtex`. Assuming that your LaTeX file is called `main.tex`:
+```
+# do not run: `bibtex main.tex`
+bibtex main
+```
+
+A full compilation from cli:
+```
+pdflatex -interaction=nonstopmode -file-line-error main.tex
+bibtex main
+pdflatex -interaction=nonstopmode -file-line-error main.tex
+```
 
 ## Operations
 

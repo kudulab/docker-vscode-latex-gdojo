@@ -20,7 +20,7 @@ load '/opt/bats-assert/load.bash'
 
 @test "latex to pdf works" {
   # create the pdf file
-  run /bin/bash -c "DISPLAY=\"\" dojo -i=false -c Dojofile.to_be_tested \"rm -f main.pdf && pdflatex -interaction=nonstopmode -file-line-error main.tex\""
+  run /bin/bash -c "DISPLAY=\"\" dojo -i=false -c Dojofile.to_be_tested \"rm -f main.{pdf,aux,bbl,blg,fls,fdb_latexmk,out,run.xml,synctex.gz,toc,log} && pdflatex -interaction=nonstopmode -file-line-error main.tex && bibtex main && pdflatex -interaction=nonstopmode -file-line-error main.tex\""
   refute_output -p "Undefined control sequence"
   assert_equal "$status" 0
 
@@ -40,5 +40,7 @@ load '/opt/bats-assert/load.bash'
   assert_line --partial "pgf"
   assert_line --partial "fontaxes"
   assert_line --partial "carlito"
+  assert_line --partial "biblatex"
+  assert_line --partial "logreq"
   assert_equal "$status" 0
 }
