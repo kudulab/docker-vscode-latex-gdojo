@@ -1,3 +1,7 @@
+### 0.4.0 (2020-Sep-17)
+
+Install LaTeX packages: realboxes impnattypo mdframed needspace chngcntr
+
 ### 0.3.0 (2020-Apr-12)
 
 Install LaTeX packages: biblatex, logreq in order to generate bibliography [#2](https://github.com/kudulab/docker-vscode-latex-gdojo/issues/2)
